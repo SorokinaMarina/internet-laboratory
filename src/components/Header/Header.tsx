@@ -10,7 +10,6 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 export default function Header() {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
-  console.log(isBurgerActive);
   return (
     <header className="header">
       <div className="header__container">
@@ -40,7 +39,10 @@ export default function Header() {
           />
         </button>
       </div>
-      <BurgerMenu setIsBurgerActive={setIsBurgerActive} isBurgerActive={isBurgerActive} />
+      <BurgerMenu
+        setIsBurgerActive={setIsBurgerActive}
+        isBurgerActive={isBurgerActive}
+      />
     </header>
   );
 }

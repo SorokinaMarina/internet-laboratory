@@ -41,6 +41,10 @@
     padding: 0;
     font-weight: 600;
     cursor: pointer;
+
+    &:hover {
+      background-color: #ffffff;
+    }
   }
 }
 
@@ -61,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 600px) {
   .title-block {
     width: 70%;
     padding: 91px 0 172px;

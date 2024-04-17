@@ -7,7 +7,7 @@ import WorkBlock from "../WorkBlock/WorkBlock";
 export default function HowWorks() {
   return (
     <section className="work">
-      <h2 className="work__title">Как это работает</h2>
+      <h3 className="work__title">Как это работает</h3>
       <div className="work__cards">
         {cards.map((item: ICard) => (
           <Card key={item.title} {...item} />

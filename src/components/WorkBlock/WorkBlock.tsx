@@ -6,7 +6,7 @@ export default function WorkBlock() {
   return (
     <div className="block">
       <div className="block__container">
-        <h2 className="block__title">Круто, ты дошел до третьего блока</h2>
+        <h4 className="block__title">Круто, ты дошел до третьего блока</h4>
         <p className="block__text">
           63% опрошенных пользовались кредитами из-за того, что не могли покрыть
           непредвиденные расходы свыше 15 000 ₽. <br />
