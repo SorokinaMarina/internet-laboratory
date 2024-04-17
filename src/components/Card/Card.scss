@@ -1,0 +1,51 @@
+.card {
+  width: 100%;
+
+  &__image {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0 4px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #5e646a;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .card {
+    display: flex;
+    column-gap: 10px;
+
+    &__image {
+      width: 55px;
+      height: 60px;
+    }
+
+    &__title {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    column-gap: 23px;
+  }
+}

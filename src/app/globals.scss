@@ -1,0 +1,69 @@
+body {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.position-first-background {
+  position: absolute;
+  width: 100%;
+  min-height: 960px;
+  top: 0;
+  left: 0;
+  background-image: url("../image/imageBac.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.position-second-background {
+  position: absolute;
+  width: 100%;
+  min-height: 960px;
+  top: 0;
+  left: 0;
+  background-image: url("../image/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 80%;
+}
+
+@media screen and (max-width: 769px) {
+  .position-first-background {
+    min-height: 1024px;
+  }
+
+  .position-second-background {
+    min-height: 1024px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .position-first-background {
+    min-height: 596px;
+  }
+
+  .position-second-background {
+    min-height: 596px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .position-first-background {
+    min-height: 509px;
+  }
+
+  .position-second-background {
+    min-height: 509px;
+  }
+}
