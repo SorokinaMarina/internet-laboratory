@@ -10,7 +10,8 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "server": "json-server -w src/server/db.json -p 3001"
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [

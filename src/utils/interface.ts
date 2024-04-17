@@ -17,7 +17,7 @@ export interface IQuestions {
 export interface IArticles extends IQuestions {}
 
 export interface IValues {
-  [key: string]: string;
+  [key: string]: string | undefined;
 }
 
 export interface IInput {
@@ -33,4 +33,10 @@ export interface IInput {
 export interface ICheckbox {
   handleChecked: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
+}
+
+export interface IData {
+  name: string;
+  phone: string;
+  id: string;
 }

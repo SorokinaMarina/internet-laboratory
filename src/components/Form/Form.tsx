@@ -3,21 +3,29 @@ import { useState, useEffect } from "react";
 import "./Form.scss";
 import Input from "../Input/Input";
 import Checkbox from "../Checkbox/Checkbox";
-import { IValues } from "@/utils/interface";
+import { sendData } from "@/utils/api";
+import { v4 as uuidv4 } from "uuid";
+import { IData } from "@/utils/interface";
 
 export default function Form() {
-  const [values, setValues] = useState({});
+  // Собираем данные с полей
+  const [values, setValues] = useState({
+    inputName: "",
+    inputPhone: "",
+  });
+  console.log(values);
+  // Собираем данные с инпута
   const [checked, setChecked] = useState(false);
-
+  // Объект хранит информацию о валидности каждого поля и чекбокса
   const [isValidData, setIsValidData] = useState({
     name: false,
     phone: false,
     checkbox: false,
   });
 
+  // Переменная хранит данные окончательной валидности
   const [isValid, setIsValid] = useState(false);
-  console.log(isValid);
-
+  // переменная хранит тексты ошибок полей
   const [errorText, setErrorText] = useState({
     name: "",
     phone: "",
@@ -37,7 +45,7 @@ export default function Form() {
     const { name, value } = e.target;
 
     // Проверяем имя на валидность
-    if (name === "input-name") {
+    if (name === "inputName") {
       if (value.length < 2 || value.length > 25) {
         setIsValidData((prevValues) => ({ ...prevValues, name: false }));
         setErrorText((prevValues) => ({
@@ -54,7 +62,7 @@ export default function Form() {
     }
 
     // Проверяем телефон на валидность
-    if (name === "input-phone") {
+    if (name === "inputPhone") {
       if (value.length !== 11) {
         setIsValidData((prevValues) => ({ ...prevValues, phone: false }));
         setErrorText((prevValues) => ({
@@ -85,13 +93,27 @@ export default function Form() {
 
     setChecked(checked);
   }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const user: IData = {
+      name: values.inputName,
+      phone: values.inputPhone,
+      id: uuidv4(),
+    };
+    sendData(user);
+    setValues({ inputName: "", inputPhone: "" });
+    setErrorText({ name: "", phone: "" });
+    setChecked(false);
+  }
   return (
-    <form className="form" id="form" action="#">
+    <form className="form" id="form" action="#" onSubmit={handleSubmit}>
       <h2 className="form__title">Отправь форму</h2>
       <fieldset className="form__fieldset">
         <Input
           handleChange={handleChange}
-          name="input-name"
+          name="inputName"
           type="text"
           placeholder="Имя"
           values={values}
@@ -100,7 +122,7 @@ export default function Form() {
         />
         <Input
           handleChange={handleChange}
-          name="input-phone"
+          name="inputPhone"
           type="number"
           placeholder="Телефон"
           values={values}
