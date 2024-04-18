@@ -1,6 +1,6 @@
 import arraw from "../image/waiting.svg";
 import track from "../image/delivery-truck.svg";
-import group from "../image/Group.svg";
+import group from "../image/secure.svg";
 import money from "../image/money-bags.svg";
 
 export const arrNav = [
