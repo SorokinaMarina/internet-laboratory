@@ -5,6 +5,7 @@ import HowWorks from "@/components/HowWorks/HowWorks";
 import Questions from "@/components/Questions/Questions";
 import Articles from "@/components/Articles/Articles";
 import Form from "@/components/Form/Form";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Articles />
         <Form />
       </main>
+      <Footer />
     </>
   );
 }

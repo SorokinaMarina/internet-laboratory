@@ -1,10 +1,11 @@
 import "./WorkBlock.scss";
 import Image from "next/image";
 import blockImage from "../../image/blockImage.svg";
+import { arrNav } from "@/utils/constants";
 
 export default function WorkBlock() {
   return (
-    <div className="block">
+    <div id={arrNav[1].split(" ")[0]} className="block">
       <div className="block__container">
         <h4 className="block__title">Круто, ты дошел до третьего блока</h4>
         <p className="block__text">

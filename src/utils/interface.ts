@@ -1,3 +1,5 @@
+
+
 export interface IBurger {
   setIsBurgerActive: (isBurgerActive: boolean) => void;
   isBurgerActive: boolean;

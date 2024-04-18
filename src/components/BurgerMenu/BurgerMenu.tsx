@@ -30,16 +30,23 @@ export default function BurgerMenu({
           <ul className="burger__list">
             {arrNav.map((item: string) => (
               <li key={item} className="burger__list-element">
-                <Link className="burger__link" href="#">
-                  {item}
+                <Link className="burger__link" href={`#${item.split(" ")[0]}`}>
+                  <button
+                    className="burger__button"
+                    type="button"
+                    onClick={() => {
+                      setIsBurgerActive(false);
+                    }}
+                  >
+                    {item}
+
+                    <Image
+                      className="burger__img"
+                      src={arrow}
+                      alt="arrow-button"
+                    />
+                  </button>
                 </Link>
-                <button className="burger__button" type="button">
-                  <Image
-                    className="burger__img"
-                    src={arrow}
-                    alt="arrow-button"
-                  />
-                </button>
               </li>
             ))}
           </ul>

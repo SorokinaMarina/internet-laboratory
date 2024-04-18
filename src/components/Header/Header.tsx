@@ -18,7 +18,7 @@ export default function Header() {
           <ul className="header__list">
             {arrNav.map((item: string) => (
               <li key={item} className="header__list-element">
-                <Link className="header__link" href="#">
+                <Link className="header__link" href={`#${item.split(" ")[0]}`}>
                   {item}
                 </Link>
               </li>

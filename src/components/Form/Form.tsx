@@ -6,6 +6,7 @@ import Checkbox from "../Checkbox/Checkbox";
 import { sendData } from "@/utils/api";
 import { v4 as uuidv4 } from "uuid";
 import { IData } from "@/utils/interface";
+import { arrNav } from "@/utils/constants";
 
 export default function Form() {
   // Собираем данные с полей
@@ -13,7 +14,6 @@ export default function Form() {
     inputName: "",
     inputPhone: "",
   });
-  console.log(values);
   // Собираем данные с инпута
   const [checked, setChecked] = useState(false);
   // Объект хранит информацию о валидности каждого поля и чекбокса
@@ -108,7 +108,7 @@ export default function Form() {
     setChecked(false);
   }
   return (
-    <form className="form" id="form" action="#" onSubmit={handleSubmit}>
+    <form className="form" id={arrNav[3]} action="#" onSubmit={handleSubmit}>
       <h2 className="form__title">Отправь форму</h2>
       <fieldset className="form__fieldset">
         <Input

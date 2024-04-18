@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import "./Input.scss";
 import { IInput } from "@/utils/interface";
 import Image from "next/image";
@@ -13,10 +15,11 @@ export default function Input({
   isValid,
   errorText,
 }: IInput) {
+  const [isFocus, setIsFocus] = useState(false);
   return (
     <label className="input" htmlFor={name}>
       <input
-        className={`input__field ${!isValid && "input__field_error"}`}
+        className={`input__field ${!isValid && isFocus && "input__field_error"}`}
         id={name}
         minLength={2}
         maxLength={25}
@@ -25,12 +28,17 @@ export default function Input({
         placeholder={placeholder}
         onChange={handleChange}
         value={values[name] || ""}
+        onFocus={() => {
+          setIsFocus(true);
+        }}
       />
-      <Image
-        className="input__mark"
-        src={isValid ? green : red}
-        alt={isValid ? "Зелёная галочка" : "Красный крестик"}
-      />
+      {isFocus && (
+        <Image
+          className="input__mark"
+          src={isValid ? green : red}
+          alt={isValid ? "Зелёная галочка" : "Красный крестик"}
+        />
+      )}
       <span className="input__text">{errorText}</span>
     </label>
   );
