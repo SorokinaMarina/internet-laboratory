@@ -20,7 +20,10 @@ export interface IQuestionsElement extends IQuestions {
   openElement: string | null;
 }
 
-export interface IArticles extends IQuestions {}
+export interface IArticles {
+  title: string;
+  text: string;
+}
 
 export interface IValues {
   [key: string]: string;
