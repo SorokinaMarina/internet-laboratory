@@ -21,7 +21,7 @@
 ## Технологии
 * HTML5
 * SCSS
-* TypeScript (стандарт ES6)
+* TypeScript
 * React (Next.js)
 * Fetch
 * REST API
