@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Тестовое задание для компании "Лаборатория интернет"
+#### Ссылка на gh-pages: https://sorokinamarina.github.io/internet-laboratory/
 
-## Getting Started
+## Требования
+#### Сверстать страницу из Figma https://www.figma.com/file/dFftQlRVKZWjYGfX6yWOGW/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?type=design&node-id=0-1&mode=design 
 
-First, run the development server:
+✔️ Вёрстка должна быть адаптивная на всех разрешениях (вплоть до 320px)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✔️ Перенести типографику и показать состояния интерактивных элементов
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✔️ При работе с формой реализовать валидацию полей.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✔️ После нажатия на кнопку отправить должна происходить отправка формы на сервер (написать fetch или ajax)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+✔️ Соблюдение семантики кода и вёрстки. Осознанные названия переменных и классов (Можно БЭМ, можно без него)
 
-## Learn More
+✔️ В проекте обязательно должен быть использован один из сборщиков (Webpack, gulp)
 
-To learn more about Next.js, take a look at the following resources:
+❌ Слайдер должен быть полностью рабочий и не ломаться при уменьшении экрана. Пагинация тоже должна работать
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Технологии
+* HTML5
+* SCSS
+* TypeScript
+* React (Next.js)
+* Fetch
+* REST API
+* Git
+* Адаптивная вёрстка
+* БЭМ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Установка и запуск проекта локально
+* Клонировать репозиторий
+  
+  `git clone git@github.com:SorokinaMarina/internet-laboratory.git`
 
-## Deploy on Vercel
+* Перейти в папку "internet-laboratory"
+  
+  `cd internet-laboratory`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Установить зависимости
+  
+  `npm i`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Запустить 
+  
+  `npm run dev`
+
+## Планируется реализовать
+
+* Блок со слайдером
+* Возможность открыть только одно поле в блоке с "аккордеоном"
+* "Причесать" код проекта (в том числе стили)
+
+## Комментарии
+* Чтобы проверить работу формы, необходимо запустить проект локально, т.к. серверное взаимодействие реализовано с фейковым API.
