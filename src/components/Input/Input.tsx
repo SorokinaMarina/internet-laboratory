@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
 import "./Input.scss";
 import { IInput } from "@/utils/interface";
 import Image from "next/image";
 import green from "../../image/greenMark.svg";
 import red from "../../image/redMark.svg";
+import { IFocus } from "@/utils/interface";
 
 export default function Input({
   name,
@@ -14,8 +14,9 @@ export default function Input({
   values,
   isValid,
   errorText,
+  setIsFocus,
+  isFocus,
 }: IInput) {
-  const [isFocus, setIsFocus] = useState(false);
   return (
     <label className="input" htmlFor={name}>
       <input
@@ -29,7 +30,7 @@ export default function Input({
         onChange={handleChange}
         value={values[name] || ""}
         onFocus={() => {
-          setIsFocus(true);
+          setIsFocus((prevValues: IFocus) => ({ ...prevValues, [name]: true }));
         }}
       />
       {isFocus && (

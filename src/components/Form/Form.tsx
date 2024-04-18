@@ -5,30 +5,42 @@ import Input from "../Input/Input";
 import Checkbox from "../Checkbox/Checkbox";
 import { sendData } from "@/utils/api";
 import { v4 as uuidv4 } from "uuid";
-import { IData } from "@/utils/interface";
+import {
+  IData,
+  IValidData,
+  IValues,
+  IErrorText,
+  IFocus,
+} from "@/utils/interface";
 import { arrNav } from "@/utils/constants";
 
 export default function Form() {
   // Собираем данные с полей
-  const [values, setValues] = useState({
+  const [values, setValues] = useState<IValues>({
     inputName: "",
     inputPhone: "",
   });
   // Собираем данные с инпута
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<boolean>(false);
   // Объект хранит информацию о валидности каждого поля и чекбокса
-  const [isValidData, setIsValidData] = useState({
+  const [isValidData, setIsValidData] = useState<IValidData>({
     name: false,
     phone: false,
     checkbox: false,
   });
 
   // Переменная хранит данные окончательной валидности
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState<boolean>(false);
   // переменная хранит тексты ошибок полей
-  const [errorText, setErrorText] = useState({
+  const [errorText, setErrorText] = useState<IErrorText>({
     name: "",
     phone: "",
+  });
+
+  // Переменная отвечает за состояние фокуса на инпутах
+  const [isFocus, setIsFocus] = useState<IFocus>({
+    inputName: false,
+    inputPhone: false,
   });
 
   useEffect(() => {
@@ -38,7 +50,7 @@ export default function Form() {
     );
 
     setIsValid(valid);
-  }, [values, checked, isValidData]);
+  }, [values, checked, isValidData, isValid]);
 
   // Функция собирает данные с полей ввода
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
@@ -94,7 +106,7 @@ export default function Form() {
     setChecked(checked);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const user: IData = {
@@ -102,10 +114,27 @@ export default function Form() {
       phone: values.inputPhone,
       id: uuidv4(),
     };
-    sendData(user);
-    setValues({ inputName: "", inputPhone: "" });
-    setErrorText({ name: "", phone: "" });
-    setChecked(false);
+
+    try {
+      const res = await sendData(user);
+      if (res) {
+        setValues({ inputName: "", inputPhone: "" });
+        setErrorText({ name: "", phone: "" });
+        setChecked(false);
+        setIsValid(false);
+        setIsFocus({
+          inputName: false,
+          inputPhone: false,
+        });
+        setIsValidData({
+          name: false,
+          phone: false,
+          checkbox: false,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
   return (
     <form className="form" id={arrNav[3]} action="#" onSubmit={handleSubmit}>
@@ -119,6 +148,8 @@ export default function Form() {
           values={values}
           isValid={isValidData.name}
           errorText={errorText.name}
+          setIsFocus={setIsFocus}
+          isFocus={isFocus.inputName}
         />
         <Input
           handleChange={handleChange}
@@ -128,6 +159,8 @@ export default function Form() {
           values={values}
           isValid={isValidData.phone}
           errorText={errorText.phone}
+          setIsFocus={setIsFocus}
+          isFocus={isFocus.inputPhone}
         />
         <Checkbox handleChecked={handleChecked} checked={checked} />
         <button
