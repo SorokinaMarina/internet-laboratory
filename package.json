@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "commit": "cz",
     "server": "json-server -w src/server/db.json -p 3001",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d .next"
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
