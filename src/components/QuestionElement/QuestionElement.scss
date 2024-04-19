@@ -18,6 +18,7 @@
     border: none;
     padding: 0;
     margin-top: 24px;
+    align-items: flex-start;
     cursor: pointer;
 
     &:hover {
@@ -72,5 +73,13 @@
     font-size: 18px;
     line-height: 1.7;
     color: #5e646a;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .question {
+    &__background-img {
+      width: 27px;
+    }
   }
 }

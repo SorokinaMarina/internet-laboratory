@@ -17,7 +17,7 @@ export default function BurgerMenu({
         <div className="burger__header">
           <Image className="burger__logo" src={logo} alt="burger-logo" />
           <button
-            className="burger__button"
+            className="burger__button burger__button_header"
             type="button"
             onClick={() => {
               setIsBurgerActive(false);

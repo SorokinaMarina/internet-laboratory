@@ -47,6 +47,10 @@
     display: flex;
     justify-content: space-between;
     color: #83898f;
+
+    &_header {
+      justify-content: end;
+    }
   }
 
   &__img {

@@ -24,3 +24,11 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .articles {
+    &__container {
+      width: 90%;
+    }
+  }
+}
