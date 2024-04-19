@@ -118,23 +118,23 @@ export default function Form() {
           handleChange={handleChange}
           name="inputName"
           type="text"
-          placeholder="Имя"
           values={values}
           isValid={isValidData.name}
           errorText={errorText.name}
           setIsFocus={setIsFocus}
           isFocus={isFocus.inputName}
+          label='Имя'
         />
         <Input
           handleChange={handleChange}
           name="inputPhone"
           type="number"
-          placeholder="Телефон"
           values={values}
           isValid={isValidData.phone}
           errorText={errorText.phone}
           setIsFocus={setIsFocus}
           isFocus={isFocus.inputPhone}
+          label='Телефон'
         />
         <Checkbox handleChecked={handleChecked} checked={checked} />
         <button

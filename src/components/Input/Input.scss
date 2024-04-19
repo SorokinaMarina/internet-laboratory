@@ -3,6 +3,8 @@
   height: 64px;
   display: block;
   position: relative;
+  background-color: #f6f8fa;
+  border-radius: 4px;
 
   &__field {
     width: 100%;
@@ -15,14 +17,14 @@
     padding-left: 16px;
     font-size: 18px;
 
-    &_error {
-      border: 1px solid #f13636;
-    }
-
     &:focus {
       outline: none;
       background-color: #ffffff;
       border: 1px solid #c2c8cd;
+    }
+
+    &_error {
+      border: 1px solid #f13636;
     }
 
     &::placeholder {

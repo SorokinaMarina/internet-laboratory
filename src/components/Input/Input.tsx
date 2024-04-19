@@ -9,13 +9,13 @@ import { IFocus } from "@/utils/interface";
 export default function Input({
   name,
   type,
-  placeholder,
   handleChange,
   values,
   isValid,
   errorText,
   setIsFocus,
   isFocus,
+  label,
 }: IInput) {
   return (
     <label className="input" htmlFor={name}>
@@ -26,7 +26,7 @@ export default function Input({
         maxLength={25}
         name={name}
         type={type}
-        placeholder={placeholder}
+        placeholder={label}
         onChange={handleChange}
         value={values[name] || ""}
         onFocus={() => {

@@ -28,6 +28,10 @@
       .question__title_color {
         color: #191c1f;
       }
+
+      .question__title_color:hover {
+        opacity: 80%;
+      }
     }
   }
   &__button:hover > &__background-img {
@@ -35,6 +39,7 @@
   }
 
   &__button:hover > &__background-img_cross {
+    opacity: 80%;
     background-image: url("../../image/close.svg");
   }
 

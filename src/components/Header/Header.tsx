@@ -9,7 +9,9 @@ import Link from "next/link";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 export default function Header() {
-  const [isBurgerActive, setIsBurgerActive] = useState(false);
+  // Переменная отвечает за видимость бургер-меню
+  const [isBurgerActive, setIsBurgerActive] = useState<boolean>(false);
+
   return (
     <header className="header">
       <div className="header__container">

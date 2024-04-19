@@ -1,5 +1,5 @@
 export interface IBurger {
-  setIsBurgerActive: (isBurgerActive: boolean) => void;
+  setIsBurgerActive: React.Dispatch<React.SetStateAction<boolean>>;
   isBurgerActive: boolean;
 }
 
@@ -59,13 +59,13 @@ export interface IFocus {
 export interface IInput {
   name: string;
   type: string;
-  placeholder: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   values: IValues;
   isValid: boolean | null;
   errorText: string;
   setIsFocus: React.Dispatch<React.SetStateAction<IFocus>>;
   isFocus: boolean;
+  label: string;
 }
 
 export interface Ivalidate {
