@@ -20,7 +20,7 @@ export default function Input({
   return (
     <label className="input" htmlFor={name}>
       <input
-        className={`input__field ${!isValid && isFocus && "input__field_error"}`}
+        className={`input__field ${!isValid && isFocus && isValid !== null && "input__field_error"}`}
         id={name}
         minLength={2}
         maxLength={25}
@@ -33,7 +33,7 @@ export default function Input({
           setIsFocus((prevValues: IFocus) => ({ ...prevValues, [name]: true }));
         }}
       />
-      {isFocus && (
+      {isFocus && isValid !== null && (
         <Image
           className="input__mark"
           src={isValid ? green : red}

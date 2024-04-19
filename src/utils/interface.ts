@@ -41,9 +41,9 @@ export interface IData {
 }
 
 export interface IValidData {
-  name: boolean;
-  phone: boolean;
-  checkbox: boolean;
+  name: boolean | null;
+  phone: boolean | null;
+  checkbox: boolean | null;
 }
 
 export interface IErrorText {
@@ -62,7 +62,7 @@ export interface IInput {
   placeholder: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   values: IValues;
-  isValid: boolean;
+  isValid: boolean | null;
   errorText: string;
   setIsFocus: React.Dispatch<React.SetStateAction<IFocus>>;
   isFocus: boolean;

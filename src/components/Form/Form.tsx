@@ -25,9 +25,9 @@ export default function Form() {
   const [checked, setChecked] = useState<boolean>(false);
   // Объект хранит информацию о валидности каждого поля и чекбокса
   const [isValidData, setIsValidData] = useState<IValidData>({
-    name: false,
-    phone: false,
-    checkbox: false,
+    name: null,
+    phone: null,
+    checkbox: null,
   });
 
   // Переменная хранит данные окончательной валидности
@@ -57,7 +57,7 @@ export default function Form() {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { name, value } = e.target;
 
-    validate({name, value, setIsValidData, setErrorText})
+    validate({ name, value, setIsValidData, setErrorText });
 
     setValues((prevValues) => ({ ...prevValues, [name]: value }));
   }
@@ -86,9 +86,9 @@ export default function Form() {
       inputPhone: false,
     });
     setIsValidData({
-      name: false,
-      phone: false,
-      checkbox: false,
+      name: null,
+      phone: null,
+      checkbox: null,
     });
   }
 
