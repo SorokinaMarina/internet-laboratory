@@ -3,3 +3,22 @@
   height: 24px;
   object-fit: cover;
 }
+
+%button {
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 0;
+}
+
+%title {
+  width: 100%;
+  text-align: center;
+  color: #191c1f;
+  font-size: 40px;
+  line-height: 1.4;
+  font-weight: 600;
+}

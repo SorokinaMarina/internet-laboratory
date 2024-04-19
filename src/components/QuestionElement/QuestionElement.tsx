@@ -10,7 +10,7 @@ export default function QuestionElement({
   openElement,
 }: IQuestionsElement) {
   return (
-    <div className="question">
+    <li className="question">
       <button
         className="question__button"
         onClick={() => {
@@ -27,6 +27,6 @@ export default function QuestionElement({
         ></div>
       </button>
       {id === openElement && <p className="question__text">{text}</p>}
-    </div>
+    </li>
   );
 }

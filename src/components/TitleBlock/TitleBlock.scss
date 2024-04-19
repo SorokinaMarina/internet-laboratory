@@ -1,3 +1,5 @@
+@import "../../utils/_vars";
+
 .title-block {
   width: 39%;
   padding: 232px 0 313px;
@@ -30,17 +32,12 @@
   &__button {
     width: 251px;
     height: 64px;
-    margin: 0 auto;
-    text-align: center;
     color: #000;
     background-color: #eceff2;
-    border: none;
-    border-radius: 4px;
-    font-size: 20px;
     line-height: 1.2;
-    padding: 0;
     font-weight: 600;
-    cursor: pointer;
+
+    @extend %button;
 
     &:hover {
       background-color: #ffffff;

@@ -19,7 +19,7 @@ export default function Questions() {
   return (
     <section id={arrNav[2].split(" ")[0]} className="questions">
       <h3 className="questions__title">Вопросы и ответы</h3>
-      <div className="questions__container">
+      <ul className="questions__container">
         {questions.map((item: IQuestions) => (
           <QuestionElement
             key={item.id}
@@ -28,7 +28,7 @@ export default function Questions() {
             openElement={openElement}
           />
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
