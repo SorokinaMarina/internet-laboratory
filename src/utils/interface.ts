@@ -67,3 +67,10 @@ export interface IInput {
   setIsFocus: React.Dispatch<React.SetStateAction<IFocus>>;
   isFocus: boolean;
 }
+
+export interface Ivalidate {
+  name: string;
+  value: string;
+  setIsValidData: React.Dispatch<React.SetStateAction<IValidData>>;
+  setErrorText: React.Dispatch<React.SetStateAction<IErrorText>>;
+}

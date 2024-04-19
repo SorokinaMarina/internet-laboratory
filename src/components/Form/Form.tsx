@@ -13,6 +13,7 @@ import {
   IFocus,
 } from "@/utils/interface";
 import { arrNav } from "@/utils/constants";
+import { validate } from "@/utils/validate";
 
 export default function Form() {
   // Собираем данные с полей
@@ -56,39 +57,7 @@ export default function Form() {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { name, value } = e.target;
 
-    // Проверяем имя на валидность
-    if (name === "inputName") {
-      if (value.length < 2 || value.length > 25) {
-        setIsValidData((prevValues) => ({ ...prevValues, name: false }));
-        setErrorText((prevValues) => ({
-          ...prevValues,
-          name: "Имя должно включать в себя от 2 до 25 символов",
-        }));
-      } else {
-        setIsValidData((prevValues) => ({ ...prevValues, name: true }));
-        setErrorText((prevValues) => ({
-          ...prevValues,
-          name: "",
-        }));
-      }
-    }
-
-    // Проверяем телефон на валидность
-    if (name === "inputPhone") {
-      if (value.length !== 11) {
-        setIsValidData((prevValues) => ({ ...prevValues, phone: false }));
-        setErrorText((prevValues) => ({
-          ...prevValues,
-          phone: "Номер телефона должен начинаться с 8 и состоять из 11 цифр",
-        }));
-      } else {
-        setIsValidData((prevValues) => ({ ...prevValues, phone: true }));
-        setErrorText((prevValues) => ({
-          ...prevValues,
-          phone: "",
-        }));
-      }
-    }
+    validate({name, value, setIsValidData, setErrorText})
 
     setValues((prevValues) => ({ ...prevValues, [name]: value }));
   }
@@ -106,6 +75,23 @@ export default function Form() {
     setChecked(checked);
   }
 
+  // Функция, которая сьрасывает значения переменных
+  function clearData(): void {
+    setValues({ inputName: "", inputPhone: "" });
+    setErrorText({ name: "", phone: "" });
+    setChecked(false);
+    setIsValid(false);
+    setIsFocus({
+      inputName: false,
+      inputPhone: false,
+    });
+    setIsValidData({
+      name: false,
+      phone: false,
+      checkbox: false,
+    });
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -118,19 +104,7 @@ export default function Form() {
     try {
       const res = await sendData(user);
       if (res) {
-        setValues({ inputName: "", inputPhone: "" });
-        setErrorText({ name: "", phone: "" });
-        setChecked(false);
-        setIsValid(false);
-        setIsFocus({
-          inputName: false,
-          inputPhone: false,
-        });
-        setIsValidData({
-          name: false,
-          phone: false,
-          checkbox: false,
-        });
+        clearData();
       }
     } catch (err) {
       console.log(err);
