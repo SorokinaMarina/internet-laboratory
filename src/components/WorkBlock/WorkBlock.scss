@@ -30,7 +30,7 @@
   }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1000px) {
   .block {
     &__image {
       width: 351px;
@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .block {
     flex-direction: column-reverse;
     justify-content: center;

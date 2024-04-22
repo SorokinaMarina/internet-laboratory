@@ -1,6 +1,5 @@
 body {
   width: 100%;
-  max-width: 1920px;
   height: 100%;
   box-sizing: border-box;
   font-size: 16px;
@@ -15,7 +14,7 @@ body {
   min-height: 960px;
   top: 0;
   left: 0;
-  background-image: url("../image/imageBac.svg");
+  background-image: url("../image/imageBac-min.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -29,13 +28,39 @@ body {
   min-height: 960px;
   top: 0;
   left: 0;
-  background-image: url("../image/background.svg");
+  background-image: url("../image/background-min.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -1;
   overflow: hidden;
   opacity: 80%;
+}
+
+.swiper {
+  width: 1109px;
+}
+
+.swiper > .swiper-wrapper {
+  width: 90%;
+  margin: 32px auto 50px;
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  width: 341px !important;
+}
+
+// .swiper-button-next,
+// .swiper-rtl .swiper-button-prev {
+//   right: auto;
+//   left: 140px !important;
+// }
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: auto;
+  right: 140px !important;
 }
 
 @media screen and (max-width: 769px) {

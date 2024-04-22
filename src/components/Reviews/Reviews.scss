@@ -1,0 +1,17 @@
+@import "../../utils/_vars";
+
+.reviews {
+  width: 100%;
+  padding: 57px 0 45px;
+  background-color: #f6f8fa;
+
+  &__container {
+    width: 1216px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @extend %title;
+    margin: 0 auto;
+  }
+}
