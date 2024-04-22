@@ -6,10 +6,11 @@ import Questions from "@/components/Questions/Questions";
 import Articles from "@/components/Articles/Articles";
 import Form from "@/components/Form/Form";
 import Footer from "@/components/Footer/Footer";
+import RootLayout from "./layout";
 
 export default function Home() {
   return (
-    <>
+    <RootLayout>
       <Header />
       <div className="position-first-background" />
       <div className="position-second-background" />
@@ -21,6 +22,6 @@ export default function Home() {
         <Form />
       </main>
       <Footer />
-    </>
+    </RootLayout>
   );
 }
