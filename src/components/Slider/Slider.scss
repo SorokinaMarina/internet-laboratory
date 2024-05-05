@@ -61,8 +61,8 @@
 
 @media screen and (max-width: 1330px) {
   .swiper-pagination-bullet {
-    margin-right: 19px !important;
-    margin-left: 0px !important;
+    margin-right: 9px !important;
+    margin-left: 9px !important;
   }
 
   .swiper {
@@ -89,6 +89,11 @@
 @media screen and (max-width: 800px) {
   .swiper {
     padding-left: 2% !important;
+  }
+
+  .swiper-pagination-bullet {
+    margin-right: 18px !important;
+    margin-left: 0px !important;
   }
 }
 
