@@ -40,10 +40,9 @@ export default function Slider() {
       <Swiper
         cssMode={true}
         navigation={navigationActive}
-        slidesPerView={1}
         spaceBetween={32}
         breakpoints={{
-          1330: {
+          1331: {
             slidesPerView: 3,
           },
           768: {
@@ -57,7 +56,6 @@ export default function Slider() {
         loop={true}
         modules={[Navigation, Pagination]}
         autoHeight={true}
-        simulateTouch={true}
         className="mySwiper"
       >
         {reviews.map((item: IReview, index: number) => (
