@@ -40,7 +40,6 @@ export default function Slider() {
       <Swiper
         cssMode={true}
         navigation={navigationActive}
-        spaceBetween={32}
         breakpoints={{
           1331: {
             slidesPerView: 3,
