@@ -37,32 +37,6 @@ body {
   opacity: 80%;
 }
 
-.swiper {
-  width: 1109px;
-}
-
-.swiper > .swiper-wrapper {
-  width: 90%;
-  margin: 32px auto 50px;
-  box-sizing: border-box;
-}
-
-.swiper-slide {
-  width: 341px !important;
-}
-
-// .swiper-button-next,
-// .swiper-rtl .swiper-button-prev {
-//   right: auto;
-//   left: 140px !important;
-// }
-
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
-  left: auto;
-  right: 140px !important;
-}
-
 @media screen and (max-width: 769px) {
   .position-first-background {
     min-height: 1024px;

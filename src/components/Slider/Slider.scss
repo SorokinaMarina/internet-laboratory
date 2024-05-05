@@ -1,1 +1,119 @@
+.swiper {
+  width: 1172px !important;
+  margin-top: 0 !important;
+  padding-left: 50px !important;
+  padding-bottom: 37px !important;
+  overflow: visible !important;
+}
 
+.swiper > .swiper-wrapper {
+  width: 96% !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  min-height: 316px !important;
+}
+
+.swiper-slide {
+  width: 341px !important;
+  padding: 20px 16px !important;
+  margin: 8px 0 !important;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  left: auto !important;
+  right: 20px !important;
+  background-image: url("../../image/ArrowRight.svg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 15px 32px !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  right: auto !important;
+  left: 18px !important;
+  background-image: url("../../image/ArrowRight.svg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 15px 32px !important;
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination {
+  bottom: 0px !important;
+}
+
+.swiper-pagination-bullet {
+  margin-right: 18px !important;
+  margin-left: 0px !important;
+}
+
+@media screen and (max-width: 1330px) {
+  .swiper-pagination-bullet {
+    margin-right: 19px !important;
+    margin-left: 0px !important;
+  }
+
+  .swiper {
+    width: 775px !important;
+    padding-left: 3% !important;
+  }
+
+  .swiper-slide {
+    width: 352px !important;
+    padding: 20px 9px !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: 0px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: 7px !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .swiper {
+    padding-left: 2% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swiper {
+    width: 376px !important;
+  }
+
+  .swiper-slide {
+    width: 340px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .swiper {
+    padding-bottom: 4px !important;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .swiper {
+    width: 337px !important;
+  }
+
+  .swiper-slide {
+    width: 289px !important;
+  }
+}

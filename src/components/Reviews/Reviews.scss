@@ -2,16 +2,47 @@
 
 .reviews {
   width: 100%;
-  padding: 57px 0 45px;
+  padding: 71px 0 45px;
   background-color: #f6f8fa;
 
   &__container {
     width: 1216px;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   &__title {
     @extend %title;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .reviews {
+    padding-top: 34px;
+
+    &__container {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .reviews {
+    &__title {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .reviews {
+    padding-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .reviews {
+    padding-top: 20px;
   }
 }

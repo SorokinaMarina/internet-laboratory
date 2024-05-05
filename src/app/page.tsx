@@ -11,7 +11,7 @@ import RootLayout from "./layout";
 
 export default function Home() {
   return (
-    <>
+    <RootLayout>
       <Header />
       <div className="position-first-background" />
       <div className="position-second-background" />
@@ -24,6 +24,6 @@ export default function Home() {
         <Form />
       </main>
       <Footer />
-    </>
+    </RootLayout>
   );
 }
