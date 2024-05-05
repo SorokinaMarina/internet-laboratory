@@ -74,3 +74,10 @@ export interface Ivalidate {
   setIsValidData: React.Dispatch<React.SetStateAction<IValidData>>;
   setErrorText: React.Dispatch<React.SetStateAction<IErrorText>>;
 }
+
+export interface IReview {
+  name: string;
+  img: string;
+  city: string;
+  text: string;
+}

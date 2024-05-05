@@ -28,3 +28,11 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .article {
+    &__title {
+      margin-bottom: 15px;
+    }
+  }
+}

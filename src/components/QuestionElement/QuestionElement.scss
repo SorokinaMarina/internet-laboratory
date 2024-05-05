@@ -78,8 +78,14 @@
 
 @media screen and (max-width: 500px) {
   .question {
+    padding-bottom: 18px;
+
     &__background-img {
       width: 27px;
+    }
+
+    &__button {
+      margin-top: 24px;
     }
   }
 }

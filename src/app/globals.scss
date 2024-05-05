@@ -1,6 +1,5 @@
 body {
   width: 100%;
-  max-width: 1920px;
   height: 100%;
   box-sizing: border-box;
   font-size: 16px;
@@ -15,7 +14,7 @@ body {
   min-height: 960px;
   top: 0;
   left: 0;
-  background-image: url("../image/imageBac.svg");
+  background-image: url("../image/imageBac-min.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -29,7 +28,7 @@ body {
   min-height: 960px;
   top: 0;
   left: 0;
-  background-image: url("../image/background.svg");
+  background-image: url("../image/background-min.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

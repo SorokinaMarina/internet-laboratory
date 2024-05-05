@@ -6,6 +6,7 @@ import Questions from "@/components/Questions/Questions";
 import Articles from "@/components/Articles/Articles";
 import Form from "@/components/Form/Form";
 import Footer from "@/components/Footer/Footer";
+import Reviews from "@/components/Reviews/Reviews";
 import RootLayout from "./layout";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="main">
         <TitleBlock />
         <HowWorks />
+        <Reviews />
         <Questions />
         <Articles />
         <Form />
