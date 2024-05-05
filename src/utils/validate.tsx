@@ -35,7 +35,7 @@ export function validate({
       setIsValidData((prevValues) => ({ ...prevValues, phone: false }));
       setErrorText((prevValues) => ({
         ...prevValues,
-        phone: "Номер телефона должен начинаться с 8 и состоять из 11 цифр",
+        phone: "Номер телефона должен состоять из 11 цифр",
       }));
     } else {
       setIsValidData((prevValues) => ({ ...prevValues, phone: true }));
