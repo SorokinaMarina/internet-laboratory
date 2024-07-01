@@ -123,7 +123,7 @@ export default function Form() {
           errorText={errorText.name}
           setIsFocus={setIsFocus}
           isFocus={isFocus.inputName}
-          label='Имя'
+          label="Имя"
         />
         <Input
           handleChange={handleChange}
@@ -134,7 +134,7 @@ export default function Form() {
           errorText={errorText.phone}
           setIsFocus={setIsFocus}
           isFocus={isFocus.inputPhone}
-          label='Телефон'
+          label="Телефон"
         />
         <Checkbox handleChecked={handleChecked} checked={checked} />
         <button

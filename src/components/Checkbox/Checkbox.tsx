@@ -13,7 +13,7 @@ export default function Checkbox({ checked, handleChecked }: ICheckbox) {
           onChange={handleChecked}
           checked={checked}
         />
-        <span className="checkbox__text">Я соглашаюсь</span>
+        <span className="checkbox__text">Согласен, отказываюсь</span>
       </label>
     </div>
   );

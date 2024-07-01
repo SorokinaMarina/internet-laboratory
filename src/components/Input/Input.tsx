@@ -18,19 +18,34 @@ export default function Input({
   label,
 }: IInput) {
   return (
-    <label className="input" htmlFor={name}>
+    <div
+      className={`input ${!isValid && errorText.length !== 0 && isValid !== null && "input_error"}`}
+    >
+      <label
+        className={`input__label ${isFocus && "input__label_small"}`}
+        htmlFor={name}
+      >
+        {label}
+      </label>
       <input
-        className={`input__field ${!isValid && isFocus && isValid !== null && "input__field_error"}`}
+        className="input__field"
         id={name}
         minLength={2}
         maxLength={25}
         name={name}
         type={type}
-        placeholder={label}
         onChange={handleChange}
         value={values[name] || ""}
         onFocus={() => {
           setIsFocus((prevValues: IFocus) => ({ ...prevValues, [name]: true }));
+        }}
+        onBlur={() => {
+          if (values[name].length === 0) {
+            setIsFocus((prevValues: IFocus) => ({
+              ...prevValues,
+              [name]: false,
+            }));
+          }
         }}
       />
       {isFocus && isValid !== null && (
@@ -41,6 +56,6 @@ export default function Input({
         />
       )}
       <span className="input__text">{errorText}</span>
-    </label>
+    </div>
   );
 }
